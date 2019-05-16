@@ -38,5 +38,7 @@ typedef struct instruction_s
 } instruction_t;
 char **parser(char *buffer, char *delim);
 int counter(char *buffer, char *delim);
- stack_t *op_push(stack_t **head, unsigned int n);
+stack_t *op_push(stack_t **head, unsigned int n);
+void bridge(char *command);
+int op_pall(stack_t **head);
 #endif /*_MONTY_H_ */
