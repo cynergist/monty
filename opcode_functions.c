@@ -29,4 +29,21 @@ stack_t *op_push(stack_t **head, unsigned int n)
 	return (*head);
 }
 /**
-*op_pall- 
+*op_pall- print all elements of our doubly linked list
+* @head: a pointer to the beginning of the list
+*
+* Return: number of nodes
+*/
+int op_pall(stack_t **head)
+{
+	int i = 0;
+	stack_t *temp = *head;
+
+	while (temp)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+		i++;
+	}
+	return (i);
+}
