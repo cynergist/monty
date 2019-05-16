@@ -7,19 +7,25 @@
  * @num: function name
  * Return: 0
  */
-int (*get_opcode(char *s))(int)
+void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 {
-	instruction_t instruction_s [] = {
+
+	instruction_t opcodes[] = {
 		{"push", op_push},
 		{NULL, NULL}
 	};
 	int i = 0;
 
-	while (instruction_s[i].instruction_s)
+	while (opcodes[i].opcode)
 	{
-		if (strcmp(instruction_s[i].opcode, s) == 0)
+		if (strcmp(opcodes[i].opcode, s) == 0)
 		{
-			return (instruction_s[i].f);
+			printf("found a match %s\n", s);
+			return (opcodes[i].f);
+		}
+		else
+		{
+			printf("either no match was found or the two functions are not linking");
 		}
 		i++;
 	}

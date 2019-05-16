@@ -7,7 +7,7 @@
 *
 *Return: address of the new node
 */
-stack_t *op_push(stack_t **head, unsigned int n)
+void op_push(stack_t **head, unsigned int n)
 {
 	stack_t *new;
 
@@ -26,7 +26,6 @@ stack_t *op_push(stack_t **head, unsigned int n)
 		(*head)->prev = new;
 	}
 	*head = new;
-	return (*head);
 }
 /**
 *op_pall- print all elements of our doubly linked list
@@ -34,16 +33,16 @@ stack_t *op_push(stack_t **head, unsigned int n)
 *
 * Return: number of nodes
 */
-int op_pall(stack_t **head)
+void op_pall(stack_t **head, unsigned int n)
 {
 	int i = 0;
 	stack_t *temp = *head;
 
+	(void)n;
 	while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
 		i++;
 	}
-	return (i);
 }

@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	commandLines = parser(buffer, "\n");
 	while (commandLines[i] != NULL)
 	{
-		printf("%s\n", commandLines[i]);
+		bridge(commandLines[i], i+1);	
 		i++;
 	}
 	
