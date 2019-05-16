@@ -1,4 +1,5 @@
 #include "monty.h"
+/*global_t global; */
 /**
  * main - Reads opcodes from a file and implements them
  *
@@ -9,8 +10,10 @@
  */
 int main(int argc, char *argv[])
 {
+
 	int o, r, i = 0;
-	char *buffer; 
+/*	global.stack = NULL; */
+	char *buffer;
 	char **commandLines;
 
 	if (argc < 2)
@@ -24,29 +27,32 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		return (EXIT_FAILURE);
 	}
-	buffer = malloc(sizeof(char)* 100);
+	buffer = malloc(sizeof(char) * 100);
 	if (buffer == NULL)
 	{
 		free(buffer);
 		return (EXIT_FAILURE);
 	}
 	/* come back to see how to read to EOF no matter the size*/
+       
 	r = read(o, buffer, 100);
 	if (r == -1)
 	{
 		printf("Error: Unable to read file %s", argv[1]);
-		return(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	printf("%s", buffer);
 	commandLines = parser(buffer, "\n");
 	while (commandLines[i] != NULL)
 	{
-		bridge(commandLines[i], i+1);	
+		printf("before bridge call %d\n", i);
+		printf("first bridge successful\n");
+		bridge(commandLines[i], i + 1);
+		printf("after bridge called %d\n", i);
 		i++;
 	}
-	
-	/*the print statment above was just a test to see if the 
-	file was being opened and the contents properly stored in 
+	/*the print statment above was just a test to see if the
+	file was being opened and the contents properly stored in
 	the buffer. it was successful.
 	the code to parse the contents of buffer and then
 	feed that newly parsed string into the getfunc will go here.

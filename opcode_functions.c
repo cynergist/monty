@@ -18,9 +18,13 @@ void op_push(stack_t **head, unsigned int n)
 		free(new);
 		exit(EXIT_FAILURE);
 	}
+	printf("opcodes may be problem\n");
 	new->n = n;
+	printf("before hello\n");
 	new->next = *head;
-	new->prev = NULL;
+	printf("hello\n");
+/*	new->prev = NULL; */
+	printf("created first node\n");
 	if (*head != NULL)
 	{
 		(*head)->prev = new;

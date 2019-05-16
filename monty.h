@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -22,7 +23,13 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-
+/*
+typedef struct global_s
+{
+	stack_s *stack;
+} global_t;
+global_t global;
+*/
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode

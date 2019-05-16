@@ -6,10 +6,10 @@
  */
 void bridge(char *command, int c)
 {
-	stack_t **head; 
+	stack_t **head;
 	char **package;
 	int i = 0;
-	void (*action)(stack_t **, unsigned int);
+	void (*action)(stack_t**, unsigned int);
 
 	head = NULL;
 	package = parser(command, " ");
@@ -19,6 +19,6 @@ void bridge(char *command, int c)
 		i++;
 	}
 	action = get_opcode(package[0]);
-	printf("")
-	action(head, c); 
+	printf("It has not segfaulted yet\n");
+	action(head, c);
 }
