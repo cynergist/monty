@@ -36,5 +36,6 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+char **parser(char *buffer, char *delim);
+int counter(char *buffer, char *delim);
 #endif /*_MONTY_H_ */
