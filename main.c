@@ -9,8 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int o, r;
+	int o, r, i = 0;
 	char *buffer; 
+	char **commandLines;
 
 	if (argc < 2)
 	{
@@ -37,12 +38,20 @@ int main(int argc, char *argv[])
 		return(EXIT_FAILURE);
 	}
 	printf("%s", buffer);
+	commandLines = parser(buffer, "\n");
+	while (commandLines[i] != NULL)
+	{
+		printf("%s\n", commandLines[i]);
+		i++;
+	}
+	
 	/*the print statment above was just a test to see if the 
 	file was being opened and the contents properly stored in 
 	the buffer. it was successful.
 	the code to parse the contents of buffer and then
 	feed that newly parsed string into the getfunc will go here.
 	that will be the end of this main file*/
+	free(commandLines);
 	free(buffer);
 	return (EXIT_SUCCESS);
 }
