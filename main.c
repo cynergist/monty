@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	}
 	o = open(argv[1], O_RDONLY);
-	/* having a hard time testing this*/
 	if (o == -1)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
@@ -30,6 +29,7 @@ int main(int argc, char *argv[])
 		free(buffer);
 		return (EXIT_FAILURE);
 	}
+	/* come back to see how to read to EOF no matter the size*/
 	r = read(o, buffer, 100);
 	if (r == -1)
 	{
