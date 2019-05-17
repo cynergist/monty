@@ -56,4 +56,37 @@ void op_pint(stack_t **head, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+*op_pop - function to delete node at the head
+*
+*@head: beginning of the list
+*@n: line number
+*
+*Return: void
+*/
+void op_pop(stack_t **head, unsigned int n)
+{
+	stack_t *temp;
 
+
+	temp = *head;
+	if (!temp)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", n);
+		clean(1);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		if (temp->next)
+		{
+			temp->next->prev = NULL;
+			*head = temp->next;
+		}
+		else
+		{
+			*head = NULL;
+		}
+		free(temp);
+	}
+}
