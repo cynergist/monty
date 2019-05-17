@@ -51,7 +51,7 @@ void op_pint(stack_t **head, unsigned int n)
 	}
 	else
 	{
-		printf("L%d: can't pint, stack empty\n", n);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", n);
 		clean(1);
 		exit(EXIT_FAILURE);
 	}
