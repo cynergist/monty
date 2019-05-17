@@ -14,13 +14,16 @@ char **parser(char *buffer, char *delim)
 	int i = 0;
 
 	token = strtok(buffer, delim);
-	newStrings = malloc(sizeof(char *) * 32);
+	newStrings = malloc(sizeof(char *) * 2);
 	if (newStrings == NULL)
 	{
-		free(newStrings);
-		return (0);
+/* Clean(1) means clean all variables calling malloc and closes file pointer */
+		clean(1);
+		exit(EXIT_FAILURE);
 	}
-		while(token)
+/* Ensuring newStrings at 1 is initialized to be NULL */
+	newStrings[1] = NULL;
+	while(token && i < 2)
 	{
 		newStrings[i] = token;
 		token = strtok(NULL, delim);

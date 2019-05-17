@@ -4,10 +4,11 @@
 *
 *Return: 0
 */
-int reader()
+void reader(void)
 {
 	ssize_t readbytes;
 	size_t n = 0;
+	void (*action)(stack_t **, unsigned int);
 
 	while (1)
 	{
@@ -16,6 +17,15 @@ int reader()
 		{
 			break;
 		}
+/* This ensures that getline will count even blank, tabbed, etc. lines */
+		global.line_num++;
+
 		global.commands = parser(global.line, " \t\n");
+		if (global.commands[0])
+		{
+			action = get_opcode(global.commands[0]);
+			action(&global.stack, global.line_num);
+		}
+		clean(0);
 	}
 }
