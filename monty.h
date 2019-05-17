@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -53,6 +53,7 @@ typedef struct instruction_s
 
 /* parse.c */
 char **parser(char *buffer, char *delim);
+int numcheck(char *s);
 
 int counter(char *buffer, char *delim);
 

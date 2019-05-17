@@ -9,7 +9,13 @@
 */
 void op_push(stack_t **head, unsigned int n)
 {
-	if (!add_dnodeint(head, n))
+	if (!global.commands[1] || !numcheck(global.commands[1]))
+	{
+		clean(1);
+		fprintf(stderr, "L%d: usage: push integer\n", n);
+		exit(EXIT_FAILURE);
+	}
+	if (!add_dnodeint(head, atoi(global.commands[1])))
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		clean(1);

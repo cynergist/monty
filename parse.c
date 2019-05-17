@@ -33,3 +33,25 @@ char **parser(char *buffer, char *delim)
 	newStrings[i] = NULL;
 	return (newStrings);
 }
+/**
+*numcheck - function checks for valid num
+*
+*@s: string
+*
+*Return: True or false
+*/
+int numcheck(char *s)
+{
+	int i = 0;
+
+	if (s[i] == '-' && s[i + 1])
+		i++;
+
+	while (s[i])
+	{
+		if (!isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
