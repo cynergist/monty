@@ -90,21 +90,11 @@ void op_pop(stack_t **head, unsigned int n)
 		free(temp);
 	}
 }
-/**
-*op_swap - function swas the top two elements of the stack
-*
-*@head: beginning of the list
-*@n: line number
-*
-*Return: void
-*/
 
 /**
 *op_nop - function does nothing
-*
 *@head: beginning of the list
 *@n: line number
-*
 *Return: void
 */
 void op_nop(stack_t **head, unsigned int n)
