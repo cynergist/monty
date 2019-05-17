@@ -90,3 +90,15 @@ void op_pop(stack_t **head, unsigned int n)
 		free(temp);
 	}
 }
+
+/**
+*op_nop - function does nothing
+*@head: beginning of the list
+*@n: line number
+*Return: void
+*/
+void op_nop(stack_t **head, unsigned int n)
+{
+	(void)*head;
+	(void)n;
+}
