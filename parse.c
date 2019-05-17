@@ -44,7 +44,7 @@ int numcheck(char *s)
 {
 	int i = 0;
 
-	if (s[i] == '-' && s[i + 1])
+	if (s[i] == '-' || s[i] == '+')
 		i++;
 
 	while (s[i])
