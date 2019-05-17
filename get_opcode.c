@@ -23,10 +23,10 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 		}
 		i++;
 	}
-	clean(1);
 /* Printing the stderr, required message, line_num, opcode */
 	fprintf(stderr, "L%i: unknown instruction %s\n",
 		global.line_num, s);
+	clean(1);
 	exit(EXIT_FAILURE);
 
 	return (NULL);
