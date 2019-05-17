@@ -23,10 +23,13 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
+
+#include "lists.h"
+
 /**/
 typedef struct global_s
 {
-	stack_s *stack;
+	stack_t *stack;
 	char *line;
 	int line_num;
 	FILE *bytefile;
@@ -65,5 +68,8 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int n);
 
 /* reader.c */
 void reader(void);
+
+/*cleaner.c*/
+void clean(int everything);
 
 #endif /*_MONTY_H_ */
