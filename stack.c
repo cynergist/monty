@@ -72,3 +72,41 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	}
 	return (temp);
 }
+#include "lists.h"
+/**
+*dlistint_len- function that returns the number of elements in a list
+*
+*@h: pointer to the beginning of the list
+*
+*Return: number of elements in a list
+*/
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t i = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		i++;
+	}
+	return (i);
+}
+#include "lists.h"
+/**
+*free_dlistint- function that frees a list
+*
+*@head: beginning of the list
+*
+*Return: none, void type
+*/
+void free_dlistint(dlistint_t *head)
+{
+	dlistint_t *temp;
+
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+}
