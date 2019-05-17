@@ -11,8 +11,8 @@ void op_push(stack_t **head, unsigned int n)
 {
 	if (!global.commands[1] || !numcheck(global.commands[1]))
 	{
-		clean(1);
 		fprintf(stderr, "L%d: usage: push integer\n", n);
+		clean(1);
 		exit(EXIT_FAILURE);
 	}
 	if (!add_dnodeint(head, atoi(global.commands[1])))
@@ -56,3 +56,4 @@ void op_pint(stack_t **head, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 }
+

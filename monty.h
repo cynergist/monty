@@ -19,14 +19,24 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 #include "lists.h"
 
-/**/
+/**
+*global_s - our one global variable
+*@stack: point to linked list
+*@line: NULL pointer for getline
+*@line_num: line counter
+*@bytefile: name for file opened
+*@commands: array of pointers for parsed lines
+*
+* Description: doubly linked list node structure
+* for stack, queues, LIFO, FIFO Holberton project
+*/
 typedef struct global_s
 {
 	stack_t *stack;
@@ -47,8 +57,8 @@ extern global_t global;
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* parse.c */
