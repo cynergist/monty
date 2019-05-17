@@ -16,22 +16,20 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 		{NULL, NULL}
 	};
 	int i = 0;
-	stack_s *head = NULL;
 
 	while (opcodes[i].opcode)
 	{
 		if (strcmp(opcodes[i].opcode, s) == 0)
 		{
-        void (*f)(stack_t **stack, unsigned int line_number);
-			printf("found a match %s\n", s);
-			opcodes[i].f(&stack, line_number);
-			return (opcodes[i].f(&stack, n));
-		}
-		else
-		{
-			printf("either no match was found or the two functions are not linking");
+			return (opcodes[i].f);
 		}
 		i++;
 	}
+	clean(1);
+/* Printing the stderr, required message, line_num, opcode */
+	fprintf(stderr, "L%i: unknown instruction %s\n",
+		global.line_num, s);
+	exit(EXIT_FAILURE);
+
 	return (NULL);
 }

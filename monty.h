@@ -47,10 +47,23 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* parse.c */
 char **parser(char *buffer, char *delim);
+
 int counter(char *buffer, char *delim);
-void op_push(stack_t **head, unsigned int n);
-void bridge(char *command, int c);
+
+/* opcode_functions.c */
 void op_pall(stack_t **head, unsigned int n);
+void op_push(stack_t **head, unsigned int n);
+
+/* bridge */
+void bridge(char *command, int c);
+
+/* get_opcode.c */
 void (*get_opcode(char *s))(stack_t **stack, unsigned int n);
+
+/* reader.c */
+void reader(void);
+
 #endif /*_MONTY_H_ */
