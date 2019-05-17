@@ -73,6 +73,7 @@ void op_push(stack_t **head, unsigned int n);
 void op_pint(stack_t **head, unsigned int n);
 void op_pop(stack_t **head, unsigned int n);
 void op_nop(stack_t **head, unsigned int n);
+void op_add(stack_t **head, unsigned int n);
 
 /* bridge */
 void bridge(char *command, int c);

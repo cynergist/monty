@@ -107,6 +107,30 @@ void op_pop(stack_t **head, unsigned int n)
 *
 *Return: void
 */
+void op_add(stack_t **head, unsigned int n)
+{
+	stack_t *temp = get_dnodeint_at_index(*head, 0);
+	stack_t *temp2 = get_dnodeint_at_index(*head, 1);
+
+	if (!temp2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", n);
+		clean(1);
+		exit(EXIT_FAILURE);
+	}
+	temp2->n += temp->n;
+
+	if (temp->next)
+	{
+		temp->next->prev = NULL;
+		*head = temp->next;
+	}
+	else
+	{
+		*head = NULL;
+	}
+	free(temp);
+}
 
 /**
 *op_nop - function does nothing
@@ -120,5 +144,4 @@ void op_nop(stack_t **head, unsigned int n)
 {
 	(void)*head;
 	(void)n;
-	return;
 }
