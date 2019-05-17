@@ -32,3 +32,25 @@ void op_pall(stack_t **head, __attribute__((unused)) unsigned int n)
 {
 	print_dlistint(*head);
 }
+void op_pint(stack_t **head, unsigned int n)
+{
+	stack_t *temp;
+	
+ 	temp= get_dnodeint_at_index(*head, 0);
+	if(temp)
+	{
+		printf("%d\n", temp->n);
+	}
+	else
+	{
+		printf("L%d: can't pint, stack empty", n);
+		clean(1);
+		exit(EXIT_FAILURE);
+	}
+}
+/*void op_pop(stack_t **head, unsigned int n)
+{
+		
+}*/
+
+

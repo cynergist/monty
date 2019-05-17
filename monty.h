@@ -60,6 +60,7 @@ int counter(char *buffer, char *delim);
 /* opcode_functions.c */
 void op_pall(stack_t **head, unsigned int n);
 void op_push(stack_t **head, unsigned int n);
+void op_pint(stack_t **head, unsigned int n);
 
 /* bridge */
 void bridge(char *command, int c);
