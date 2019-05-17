@@ -21,4 +21,6 @@ void bridge(char *command, int c)
 	action = get_opcode(package[0]);
 	printf("It has not segfaulted yet\n");
 	action(head, c);
+	get_opcode(package[0])(head, c);
+	printf("")
 }

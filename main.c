@@ -1,5 +1,7 @@
 #include "monty.h"
-/*global_t global; */
+
+global_t global = GLOBAL_INIT;
+
 /**
  * main - Reads opcodes from a file and implements them
  *
@@ -12,36 +14,20 @@ int main(int argc, char *argv[])
 {
 
 	int o, r, i = 0;
-/*	global.stack = NULL; */
 	char *buffer;
 	char **commandLines;
 
 	if (argc < 2)
 	{
 		printf("USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
-	o = open(argv[1], O_RDONLY);
-	if (o == -1)
+	global.bytefile = fopen(argv[1], "r");
+	if (global.bytefile == NULL)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
-	buffer = malloc(sizeof(char) * 100);
-	if (buffer == NULL)
-	{
-		free(buffer);
-		return (EXIT_FAILURE);
-	}
-	/* come back to see how to read to EOF no matter the size*/
-       
-	r = read(o, buffer, 100);
-	if (r == -1)
-	{
-		printf("Error: Unable to read file %s", argv[1]);
-		return (EXIT_FAILURE);
-	}
-	printf("%s", buffer);
 	commandLines = parser(buffer, "\n");
 	while (commandLines[i] != NULL)
 	{

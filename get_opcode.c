@@ -22,8 +22,10 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 	{
 		if (strcmp(opcodes[i].opcode, s) == 0)
 		{
+        void (*f)(stack_t **stack, unsigned int line_number);
 			printf("found a match %s\n", s);
 			opcodes[i].f(&stack, line_number);
+			return (opcodes[i].f(&stack, n));
 		}
 		else
 		{
