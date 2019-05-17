@@ -24,7 +24,7 @@ char **parser(char *buffer, char *delim)
 /* Ensuring newStrings at 1 is initialized to be NULL */
 	newStrings[1] = NULL;
 	newStrings[2] = NULL;
-	while(token && i < 2)
+	while (token && i < 2)
 	{
 		newStrings[i] = token;
 		token = strtok(NULL, delim);

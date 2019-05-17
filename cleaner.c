@@ -1,4 +1,10 @@
 #include "monty.h"
+/**
+*clean - function that cleans everything
+*@everything: clean all
+*
+*Return: void
+*/
 void clean(int everything)
 {
 	if (global.line)
@@ -15,5 +21,4 @@ void clean(int everything)
 		fclose(global.bytefile);
 		global.bytefile = NULL;
 	}
-	
 }

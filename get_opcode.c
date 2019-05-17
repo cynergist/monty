@@ -4,12 +4,10 @@
  * opcode function from opcode_funcs
  *
  * @s: the opcode
- * @num: function name
  * Return: 0
  */
 void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 {
-
 	instruction_t opcodes[] = {
 		{"push", op_push},
 		{"pall", op_pall},
