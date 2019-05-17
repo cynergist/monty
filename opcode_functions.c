@@ -25,5 +25,5 @@ void op_push(stack_t **head, unsigned int n)
 */
 void op_pall(stack_t **head, __attribute__((unused)) unsigned int n)
 {
-	dlistint_len(*head);
+	print_dlistint(*head);
 }

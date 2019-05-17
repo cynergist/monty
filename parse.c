@@ -14,7 +14,7 @@ char **parser(char *buffer, char *delim)
 	int i = 0;
 
 	token = strtok(buffer, delim);
-	newStrings = malloc(sizeof(char *) * 2);
+	newStrings = malloc(sizeof(char *) * 3);
 	if (newStrings == NULL)
 	{
 /* Clean(1) means clean all variables calling malloc and closes file pointer */
@@ -23,6 +23,7 @@ char **parser(char *buffer, char *delim)
 	}
 /* Ensuring newStrings at 1 is initialized to be NULL */
 	newStrings[1] = NULL;
+	newStrings[2] = NULL;
 	while(token && i < 2)
 	{
 		newStrings[i] = token;
