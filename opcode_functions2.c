@@ -70,7 +70,7 @@ void op_sub(stack_t **head, unsigned int n)
 
 	if (!temp2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", n);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", n);
 		clean(1);
 		exit(EXIT_FAILURE);
 	}
@@ -102,7 +102,7 @@ void op_div(stack_t **head, unsigned int n)
 
 	if (!temp2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", n);
+		fprintf(stderr, "L%d: can't div, stack too short\n", n);
 		clean(1);
 		exit(EXIT_FAILURE);
 	}
@@ -143,7 +143,7 @@ void op_mul(stack_t **head, unsigned int n)
 
 	if (!temp2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", n);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", n);
 		clean(1);
 		exit(EXIT_FAILURE);
 	}
