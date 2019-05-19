@@ -80,6 +80,7 @@ void op_swap(stack_t **head, unsigned int n);
 void op_sub(stack_t **head, unsigned int n);
 void op_div(stack_t **head, unsigned int n);
 void op_mul(stack_t **head, unsigned int n);
+void op_mod(stack_t **head, unsigned int n);
 
 /* bridge */
 void bridge(char *command, int c);
