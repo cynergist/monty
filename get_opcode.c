@@ -20,7 +20,6 @@ void (*get_opcode(char *s))(stack_t **stack, unsigned int n)
 		{"div", op_div},
 		{"mul", op_mul},
 		{"mod", op_mod},
-		{"rotl", op_rotl},
 		{NULL, NULL}
 	};
 	int i = 0;
