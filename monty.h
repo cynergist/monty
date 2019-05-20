@@ -74,13 +74,16 @@ void op_pint(stack_t **head, unsigned int n);
 void op_pop(stack_t **head, unsigned int n);
 void op_nop(stack_t **head, unsigned int n);
 
-/* opcode_functions2.c*/
+/* opcode_functions2.c */
 void op_add(stack_t **head, unsigned int n);
 void op_swap(stack_t **head, unsigned int n);
 void op_sub(stack_t **head, unsigned int n);
 void op_div(stack_t **head, unsigned int n);
 void op_mul(stack_t **head, unsigned int n);
 void op_mod(stack_t **head, unsigned int n);
+
+/* opcode_functions3.c */
+stack_t **op_rotl(stack_t **head);
 
 /* bridge */
 void bridge(char *command, int c);
